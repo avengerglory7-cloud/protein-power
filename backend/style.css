@@ -1,0 +1,877 @@
+
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #080d09;
+  color: #f3f7ef;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+/* HEADER */
+.site-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 18px 6%;
+  background: #080d09;
+  border-bottom: 1px solid rgba(165, 255, 0, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: #a5ff00;
+}
+
+/* ONE GREEN NAVIGATION MENU */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.main-nav a {
+  display: inline-block;
+  color: #e5eee0;
+  background: transparent;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  transition: 0.3s ease;
+}
+
+.main-nav a:visited {
+  color: #e5eee0;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  color: #a5ff00;
+  background: rgba(165, 255, 0, 0.09);
+  border-color: #a5ff00;
+  box-shadow: 0 0 12px rgba(165, 255, 0, 0.25);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+/* HERO */
+.hero {
+  min-height: 440px;
+  padding: 80px 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background:
+    radial-gradient(circle at 80% 45%, rgba(117, 184, 0, 0.18), transparent 35%),
+    linear-gradient(120deg, #101b10, #080d09 70%);
+  border-bottom: 1px solid rgba(165, 255, 0, 0.15);
+}
+
+.hero-content {
+  max-width: 680px;
+}
+
+.eyebrow {
+  color: #a5ff00;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 6vw, 65px);
+  line-height: 1.12;
+  margin-bottom: 18px;
+}
+
+.hero h1 span {
+  color: #a5ff00;
+}
+
+.hero-content > p:not(.eyebrow) {
+  color: #b7c4b2;
+  max-width: 520px;
+  margin-bottom: 25px;
+}
+
+.hero-decoration {
+  color: #a5ff00;
+  font-size: clamp(80px, 15vw, 170px);
+  filter: drop-shadow(0 0 25px rgba(165, 255, 0, 0.3));
+}
+
+/* BUTTONS */
+.primary-btn {
+  display: inline-block;
+  background: #a5ff00;
+  color: #101609;
+  border: none;
+  border-radius: 30px;
+  padding: 13px 24px;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: #c4ff59;
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(165, 255, 0, 0.3);
+}
+
+/* SEARCH */
+.search-section {
+  text-align: center;
+  padding: 55px 6% 25px;
+}
+
+.search-section h2,
+.section-heading h2 {
+  font-size: 29px;
+  margin-bottom: 12px;
+}
+
+#searchInput {
+  width: min(600px, 100%);
+  padding: 15px 20px;
+  margin-top: 12px;
+  border-radius: 30px;
+  border: 1px solid #526344;
+  background: #111a11;
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+#searchInput:focus {
+  border-color: #a5ff00;
+  box-shadow: 0 0 12px rgba(165, 255, 0, 0.15);
+}
+
+/* CATEGORY SHORTCUTS */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 13px;
+  padding: 25px 6% 45px;
+}
+
+.categories a {
+  padding: 12px 20px;
+  border: 1px solid #384a2d;
+  border-radius: 25px;
+  background: #111a11;
+  color: #e8f1e1;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.categories a:hover {
+  border-color: #a5ff00;
+  color: #a5ff00;
+  box-shadow: 0 0 15px rgba(165, 255, 0, 0.12);
+}
+
+/* FOOD SECTIONS */
+.food-section {
+  padding: 55px 7%;
+  scroll-margin-top: 100px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-heading > p:not(.eyebrow) {
+  color: #aebba7;
+  margin-top: 8px;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 22px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.food-card {
+  background: #121b12;
+  border: 1px solid #293b25;
+  border-radius: 17px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-6px);
+  border-color: #a5ff00;
+  box-shadow: 0 8px 25px rgba(165, 255, 0, 0.1);
+}
+
+.food-image {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  background: #fff;
+  display: block;
+}
+
+.food-card:has(img[alt="Whey Isolate"]) .food-image,
+.food-card:has(img[alt="Protein Bar"]) .food-image {
+  object-fit: contain;
+  padding: 10px;
+}
+
+.food-info {
+  padding: 17px;
+}
+
+.food-info h3 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.food-info p {
+  color: #aebba7;
+  font-size: 14px;
+}
+
+.protein-tag {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 11px;
+  color: #a5ff00;
+  background: rgba(165, 255, 0, 0.1);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.no-results {
+  text-align: center;
+  color: #aebba7;
+  grid-column: 1 / -1;
+  padding: 25px;
+}
+
+/* CALCULATOR */
+.calculator-section,
+.feedback-section {
+  padding: 70px 6%;
+  scroll-margin-top: 100px;
+}
+
+.calculator-section {
+  background: linear-gradient(120deg, #101a10, #080d09);
+}
+
+.calculator-card,
+.feedback-card {
+  width: min(520px, 100%);
+  margin: auto;
+  padding: 28px;
+  background: #121b12;
+  border: 1px solid #34472a;
+  border-radius: 18px;
+}
+
+label {
+  display: block;
+  color: #dce8d5;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 15px 0 7px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 13px;
+  background: #080d09;
+  color: white;
+  border: 1px solid #40523a;
+  border-radius: 9px;
+  font: inherit;
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #a5ff00;
+}
+
+.calculator-card button,
+.feedback-card button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.result {
+  color: #a5ff00;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* FEEDBACK */
+.feedback-card textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+#feedbackMessage {
+  text-align: center;
+  color: #a5ff00;
+  margin-top: 12px;
+}
+
+.reviews-area {
+  max-width: 800px;
+  margin: 40px auto 0;
+}
+
+.reviews-area h3 {
+  margin-bottom: 18px;
+}
+
+.review-item {
+  background: #121b12;
+  border: 1px solid #293b25;
+  padding: 17px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.review-item h4 {
+  color: #a5ff00;
+}
+
+.review-item p {
+  color: #c4cec0;
+  margin-top: 6px;
+}
+
+.review-stars {
+  color: #ffd34e;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 35px 6%;
+  background: #050805;
+  border-top: 1px solid rgba(165, 255, 0, 0.2);
+}
+
+footer p {
+  color: #aebba7;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.copyright {
+  font-size: 12px;
+  margin-top: 18px;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .site-header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .main-nav {
+    gap: 4px;
+  }
+
+  .main-nav a {
+    font-size: 12px;
+    padding: 7px 9px;
+  }
+
+  .hero {
+    text-align: center;
+    justify-content: center;
+    padding: 65px 7%;
+  }
+
+  .hero-decoration {
+    display: none;
+  }
+
+  .food-section {
+    padding: 45px 5%;
+  }
+
+  .food-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 13px;
+  }
+
+  .food-image {
+    height: 145px;
+  }
+
+  .calculator-card,
+  .feedback-card {
+    padding: 20px;
+  }
+}
+
+/* DAILY PROTEIN TRACKER */
+
+.tracker-total {
+  margin-top: 25px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.tracker-total span {
+  color: #a5ff00;
+}
+
+.progress-track {
+  width: 100%;
+  height: 15px;
+  background: #293329;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: #a5ff00;
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+.tracker-heading {
+  margin-top: 25px;
+  color: #a5ff00;
+}
+
+.tracker-food {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  margin-top: 10px;
+  background: #080d09;
+  border: 1px solid #34472a;
+  border-radius: 10px;
+}
+
+.tracker-food span {
+  color: #e5eee0;
+}
+
+.remove-food {
+  color: #ff7777;
+  background: transparent;
+  border: 1px solid #ff7777;
+  border-radius: 15px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.reset-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: 1px solid #ff7777;
+  border-radius: 25px;
+  background: transparent;
+  color: #ff7777;
+  cursor: pointer;
+}
+
+/* MOBILE NAVIGATION MENU */
+
+.menu-toggle {
+  display: none;
+  background: #39ff14;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px;
+    background: #111;
+    border: 1px solid #39ff14;
+    border-radius: 10px;
+  }
+
+  .main-nav.active {
+    display: flex;
+  }
+
+  .main-nav a {
+    padding: 12px;
+    text-align: center;
+  }
+}
+
+/* ======================================
+   AI FOOD NUTRITION SCANNER
+====================================== */
+
+.scanner-card {
+    max-width: 750px;
+    margin: 30px auto;
+    border: 1px solid #39ff14;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.12);
+}
+
+.scanner-card input[type="file"] {
+    display: block;
+    width: 100%;
+    margin: 15px 0 20px;
+    padding: 12px;
+    border: 1px dashed #39ff14;
+    border-radius: 10px;
+    background: #151515;
+    color: white;
+}
+
+#imagePreviewContainer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#imagePreview {
+    max-height: 300px;
+    object-fit: contain;
+    border: 2px solid #39ff14;
+}
+
+#analyzeFood {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#analyzeFood:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+#nutritionResults {
+    margin-top: 25px;
+    padding: 20px;
+    border: 1px solid #39ff14;
+    border-radius: 12px;
+    background: #101810;
+}
+
+#scannedFoodName {
+    color: #39ff14;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+#scannedServing {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.nutrition-grid p {
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    margin: 0;
+}
+
+.nutrition-grid strong {
+    color: #39ff14;
+}
+
+#scanConfidence {
+    color: #39ff14;
+}
+
+#scanNotes {
+    color: #ccc;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+#addScannedProtein {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.scanner-disclaimer {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#scannerStatus {
+    color: #39ff14;
+    margin-top: 15px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .nutrition-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #nutritionResults {
+        padding: 14px;
+    }
+
+    #scannedFoodName {
+        font-size: 21px;
+    }
+}
+/* ======================================
+   FOOD SCAN HISTORY
+====================================== */
+
+.scan-history-item {
+    background: #080d09;
+    border: 1px solid #34472a;
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 12px;
+}
+
+.scan-history-item h3 {
+    color: #a5ff00;
+    margin-bottom: 6px;
+}
+
+.scan-history-item p {
+    color: #c4cec0;
+    margin-top: 6px;
+    overflow-wrap: anywhere;
+}
+
+.scan-history-item button {
+    margin-top: 12px;
+}
+
+#clearScanHistory {
+    margin-top: 20px;
+}
+/* ===============================
+   NUTRITION DASHBOARD
+================================ */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 35px auto;
+}
+
+.dashboard-card {
+    background: #101a11;
+    border: 1px solid #34472a;
+    border-radius: 16px;
+    padding: 25px 15px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    border-color: #a5ff00;
+    box-shadow: 0 5px 20px rgba(165, 255, 0, 0.12);
+}
+
+.dashboard-card span {
+    font-size: 32px;
+}
+
+.dashboard-card h3 {
+    color: #a5ff00;
+    margin: 12px 0;
+}
+
+.dashboard-card p {
+    color: white;
+    font-size: 20px;
+}
+
+.dashboard-card strong {
+    font-size: 27px;
+}
+
+.dashboard-summary {
+    max-width: 700px;
+    margin: 25px auto;
+    text-align: center;
+}
+
+.dashboard-summary h3 {
+    color: #a5ff00;
+    margin-bottom: 15px;
+}
+
+.dashboard-summary p {
+    color: #d0d8cc;
+    margin: 10px 0;
+}
+
+/* Mobile dashboard */
+@media (max-width: 700px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .dashboard-card {
+        padding: 20px 10px;
+    }
+
+    .dashboard-card strong {
+        font-size: 23px;
+    }
+}
+/* ===============================
+   NUTRITION MACRO CHART
+================================ */
+
+.nutrition-chart {
+    max-width: 750px;
+    margin: 25px auto;
+}
+
+.nutrition-chart h3 {
+    color: #a5ff00;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.chart-subtitle {
+    color: #c4cec0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.macro-row {
+    margin: 22px 0;
+}
+
+.macro-label {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.macro-label strong {
+    color: #a5ff00;
+}
+
+.macro-track {
+    width: 100%;
+    height: 14px;
+    background: #263027;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.macro-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 20px;
+    transition: width 0.7s ease;
+}
+
+.protein-fill {
+    background: #a5ff00;
+}
+
+.carbs-fill {
+    background: #00d9ff;
+}
+
+.fat-fill {
+    background: #ffad42;
+}
+
+@media (max-width: 600px) {
+    .nutrition-chart {
+        padding: 20px;
+    }
+
+    .macro-label {
+        font-size: 14px;
+    }
+}
