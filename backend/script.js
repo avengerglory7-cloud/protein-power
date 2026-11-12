@@ -626,7 +626,7 @@ analyzeFoodButton.addEventListener("click", async function () {
     nutritionResults.style.display = "none";
 
     try {
-        const response = await fetch("http://localhost:3000/analyze", {
+        const response = await fetch("https://protein-power.onrender.com/analyze", {
             method: "POST",
             body: formData
         });
